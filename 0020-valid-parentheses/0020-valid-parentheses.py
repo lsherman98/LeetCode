@@ -16,8 +16,5 @@ class Solution(object):
             else:
                 stack.append(c)
         
-        if not stack:
-            return True
-        else:
-            return False
+        return True if not stack else False
         
