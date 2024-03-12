@@ -3,14 +3,19 @@ class Solution:
         if len(nums) == 0:
             return -1
         
-        mid_idx = len(nums) // 2
+        mid_idx = len(nums) // 2 
         if nums[mid_idx] == target:
             return mid_idx
         
-        if nums[mid_idx] < target:
-            res = self.search(nums[mid_idx+1:], target)
+        if target > nums[mid_idx]:
+            res = self.search(nums[mid_idx + 1:], target) 
             if res < 0:
                 return res
-            return res + 1 + mid_idx
+            else:
+                return res + mid_idx + 1
         else:
             return self.search(nums[0:mid_idx], target)
+        
+        
+    
+    
