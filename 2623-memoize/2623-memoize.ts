@@ -7,9 +7,8 @@ function memoize(fn: Fn): Fn {
         if (key in cache) {
             return cache[key]
         }
-        let res = fn(...args)
-        cache[key] = res
-        return res
+        cache[key] = fn(...args)
+        return cache[key]
     }
 }
 
